@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { NavLink } from './NavLink';
-import { NAV_LINK_TYPE } from '../utils/enums';
+import { NavLink } from '../NavLink';
+import { NAV_LINK_TYPE } from '../../utils/enums';
 
 export function Header() {
   return (

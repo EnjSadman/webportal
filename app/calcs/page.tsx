@@ -13,6 +13,11 @@ export default function CalcMain() {
               path={'/calcs/ar'}
               type={NAV_LINK_TYPE.regular}
       />
+      <NavLink
+              text={'Misc'}
+              path={'/calcs/misc'}
+              type={NAV_LINK_TYPE.regular}
+      />
       </div>
     </main>
   )

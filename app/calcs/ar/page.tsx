@@ -9,7 +9,7 @@ export default function AriphmeticCalculator(){
 
   const [calcValue, setCalcValue] = useState("");
 
-  const detectKeyDown = (e : any) => {
+  const detectKeyDown = (e : KeyboardEvent) => {
     if (arrayOfNums.includes(Number(e.key))) {
       setCalcValue((prev) => prev + e.key)
     } else if (arrayOfOperators.includes(e.key)) {
@@ -26,7 +26,7 @@ export default function AriphmeticCalculator(){
     document.addEventListener("keydown", detectKeyDown, true);
 
     return () => {document.removeEventListener("keydown", detectKeyDown, true)}
-  }, []);
+  });
 
   return (
     <main>
@@ -38,18 +38,44 @@ export default function AriphmeticCalculator(){
               readOnly
             />
           </div>
-          <div className="grid grid-cols-4">
-            {
-              arrayOfNums.map((el, index) => {
-                return(
-                  <button key={index}
-                  
-                  >
-                    {el}
-                  </button>
-                )
-              })
-            }
+          <div className="grid grid-cols-3">
+            <div className="grid grid-cols-1">
+              {
+                arrayOfOperators.map((el, index) => {
+                  return(
+                    <button
+                      key={index}
+                      onClick={() => {
+                        console.log(calcValue[calcValue.length - 1] !== " ", (calcValue.length > 0))
+                        if ((calcValue.length > 0) && (calcValue[calcValue.length - 1] !== " ")) {
+                          console.log(calcValue.length, calcValue[calcValue.length - 1] !== " ")
+                          setCalcValue((prev) => `${prev} ${el} `);
+                        } else {
+                          setCalcValue((prev) => `${prev.slice(0, prev.length - 4)} ${el} `)
+                        }
+                      }}
+                    >
+                      {el}
+                    </button>
+                  )
+                })
+              }
+            </div>
+            <div className="grid grid-cols-4">
+              {
+                arrayOfNums.map((el, index) => {
+                  return(
+                    <button key={index}
+                      onClick={() => {
+                        setCalcValue((prev) => prev + el)
+                      }}
+                    >
+                      {el}
+                    </button>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
       </div>
