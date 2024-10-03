@@ -9,14 +9,19 @@ export default function CalcMain() {
       </div>
       <div>
       <NavLink
-              text={'Ariphmetic'}
-              path={'/calcs/ar'}
-              type={NAV_LINK_TYPE.regular}
+        text={'Ariphmetic'}
+        path={'/calcs/ar'}
+        type={NAV_LINK_TYPE.regular}
       />
       <NavLink
-              text={'Misc'}
-              path={'/calcs/misc'}
-              type={NAV_LINK_TYPE.regular}
+        text={'Misc'}
+        path={'/calcs/misc'}
+        type={NAV_LINK_TYPE.regular}
+      />
+      <NavLink
+        text={'Search methods'}
+        path={'/calcs/searchMethods'}
+        type={NAV_LINK_TYPE.regular}
       />
       </div>
     </main>

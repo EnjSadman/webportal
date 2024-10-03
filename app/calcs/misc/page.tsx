@@ -1,6 +1,6 @@
 import { CalculateBlock } from "@/app/components/CalculateBlock";
-import factorial from "@/app/components/functions/factorial";
-import { fibonacci } from "@/app/components/functions/fibonacci";
+import { factorial } from "@/app/lib/functions/math/factorial";
+import { fibonacci } from "@/app/lib/functions/math/fibonacci";
 import LogFunc from "@/app/lib/LogFunc";
 
 export default function MiscCalc() {
