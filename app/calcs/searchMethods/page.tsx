@@ -1,6 +1,10 @@
 "use client"
 
+import { SearchBlock } from "@/app/components/Blocks/SearchBlock";
 import { randomizeArrayPositions } from "@/app/lib/functions/math/randomizeArrayPositions";
+import { binarySearch } from "@/app/lib/functions/search/BinarySearch";
+import { jumpSearch } from "@/app/lib/functions/search/jumpSearch";
+import { linearSearch } from "@/app/lib/functions/search/linearSearch";
 import { useState } from "react";
 
 const BASE_ARRAY_SIZE = 10;
@@ -45,7 +49,27 @@ export default function SearchMethods() {
         </button>
       </div>
       <div>
-          
+        <SearchBlock 
+          name={"Linear search"}
+          arr={exampleArray}
+          arrayIsShuffled={shuffledArray}
+          worksWithShuffled={true}
+          searchedElement={selectedElement}
+          func={linearSearch} />
+        <SearchBlock 
+          name={"Binary search"}
+          arr={exampleArray}
+          arrayIsShuffled={shuffledArray}
+          worksWithShuffled={false}
+          searchedElement={selectedElement}
+          func={binarySearch} />
+        <SearchBlock 
+          name={"Jump search"}
+          arr={exampleArray}
+          arrayIsShuffled={shuffledArray}
+          worksWithShuffled={false}
+          searchedElement={selectedElement}
+          func={jumpSearch} />
       </div>
     </div>
   )

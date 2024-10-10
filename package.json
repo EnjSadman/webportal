@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "lint-staged": "^15.2.10",
     "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18",

@@ -5,3 +5,8 @@ export type API_CALL = {
   method: API_CALL_METHOD;
   params: string;
 };
+
+export type SEARCH_FUNCTION_PROPS = {
+  arr: number[];
+  searchedElement: number;
+}
