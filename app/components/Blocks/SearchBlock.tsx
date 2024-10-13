@@ -1,7 +1,6 @@
 "use client"
 
 import { SEARCH_FUNCTION_PROPS } from "@/app/utils/types";
-import { useState } from "react";
 
 interface Props {
   name: string,

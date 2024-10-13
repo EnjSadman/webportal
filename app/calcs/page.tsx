@@ -23,6 +23,11 @@ export default function CalcMain() {
         path={'/calcs/searchMethods'}
         type={NAV_LINK_TYPE.regular}
       />
+      <NavLink
+        text={'Sort methods'}
+        path={'/calcs/sortMethods'}
+        type={NAV_LINK_TYPE.regular}
+      />
       </div>
     </main>
   )
